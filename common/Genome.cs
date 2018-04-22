@@ -2,16 +2,16 @@
 
 namespace common
 {
-    public class Genome
+    public abstract class Genome
     {
-        #region private data members
+        #region Private Data Members
         long m_length;
         int m_crossoverPoint;
         private int m_mutationIndex;
         private float m_currentFitness;
         #endregion
 
-        #region propeties
+        #region Propeties
         public long Length
         {
             get { return m_length;}
@@ -33,6 +33,21 @@ namespace common
             get { return m_crossoverPoint;}
             set { m_crossoverPoint = value;}
         }
+        #endregion
+
+        #region CTOR DTOR
+
+
+
+        #endregion
+
+        #region Public Methods
+
+        public abstract void Initiate();
+        public abstract void Mutate();
+        public abstract void Crossover();
+        public abstract float FitnessFunction();
+
         #endregion
     }
 }
