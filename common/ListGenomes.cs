@@ -124,9 +124,12 @@ namespace common
         {
         }
 
+        /// <summary>
+        /// Choose a random gene value and assign a random generated value to it
+        /// </summary>
         public override void Mutate()
         {
-            throw new NotImplementedException();
+            this.List[this.Seed.Next((int)this.Length)] = this.Seed.Next(this.Min, this.Max);
         }
         
         #endregion
