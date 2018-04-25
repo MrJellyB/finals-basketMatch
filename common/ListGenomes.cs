@@ -117,7 +117,8 @@ namespace common
 
         public override float FitnessFunction()
         {
-            throw new NotImplementedException();
+            // TODO: Add the fitness function here based on the basket weights
+            return 1;
         }
 
         public override void Initiate()
