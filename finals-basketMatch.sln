@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27428.2015
+VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "finals-basketMatch", "finals-basketMatch.csproj", "{F46381D7-C801-4369-9755-C4D73DAF0DD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "finals-basketMatch", "webapp\finals-basketMatch.csproj", "{CF9C5CF6-F55E-4BD5-87EA-9EFD88FE9FBE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "common", "common\common.csproj", "{6A442818-2228-4699-B6B2-A560FE0B5737}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F46381D7-C801-4369-9755-C4D73DAF0DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F46381D7-C801-4369-9755-C4D73DAF0DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F46381D7-C801-4369-9755-C4D73DAF0DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F46381D7-C801-4369-9755-C4D73DAF0DD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF9C5CF6-F55E-4BD5-87EA-9EFD88FE9FBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9C5CF6-F55E-4BD5-87EA-9EFD88FE9FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9C5CF6-F55E-4BD5-87EA-9EFD88FE9FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9C5CF6-F55E-4BD5-87EA-9EFD88FE9FBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A442818-2228-4699-B6B2-A560FE0B5737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A442818-2228-4699-B6B2-A560FE0B5737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A442818-2228-4699-B6B2-A560FE0B5737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A442818-2228-4699-B6B2-A560FE0B5737}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
