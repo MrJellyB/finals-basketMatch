@@ -45,7 +45,7 @@ namespace common
 
         public abstract void Initiate();
         public abstract void Mutate();
-        public abstract void Crossover();
+        public abstract void Crossover(Genome g);
         public abstract float FitnessFunction();
 
         #endregion

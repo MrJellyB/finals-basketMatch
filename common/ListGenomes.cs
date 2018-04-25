@@ -6,7 +6,7 @@ namespace common
     {
         #region Public Methods
 
-        public override void Crossover()
+        public override void Crossover(Genome g)
         {
             throw new NotImplementedException();
         }
