@@ -22,5 +22,29 @@ namespace common
         }
 
         #endregion
+
+        #region CTOR
+
+        public BasketListGenome(long length) : base(length, 0, 100)
+        {
+            this.m_weights = new int[length];
+            // TODO: insert here default weights list
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        public void SetWeights(int[] weights)
+        {
+            
+        }
+
+        public void SetWeight(int weight, int valNum)
+        {
+            
+        }
+
+        #endregion
     }
 }
