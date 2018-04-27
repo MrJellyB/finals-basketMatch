@@ -29,7 +29,7 @@ namespace common
             set { m_max = value;}
         }
         
-        private List<object> m_list;
+        protected List<object> m_list;
         public List<object> List
         {
             get { return m_list;}
@@ -134,14 +134,24 @@ namespace common
             this.List[this.Seed.Next((int)this.Length)] = this.Seed.Next(this.Min, this.Max);
         }
         
-        public override void CanDie()
+        public override bool CanDie(float fitness)
         {
-            
+            if (this.CurrentFitness <= fitness)
+            {
+                return true;
+            }
+
+            return false;
         }
 
-        public override void CanReproduce()
+        public override bool CanReproduce(float fitness)
         {
+            if (this.CurrentFitness > fitness)
+            {
+                return true;
+            }
 
+            return false;
         }
 
         #endregion
