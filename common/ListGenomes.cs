@@ -51,6 +51,7 @@ namespace common
             this.Length = length;
             this.Min = min;
             this.Max = max;
+            this.m_list = new List<object>();
 
             // Generate the gene list
             for (int i = 0; i < length; i++)
@@ -133,6 +134,16 @@ namespace common
             this.List[this.Seed.Next((int)this.Length)] = this.Seed.Next(this.Min, this.Max);
         }
         
+        public override void CanDie()
+        {
+            
+        }
+
+        public override void CanReproduce()
+        {
+
+        }
+
         #endregion
     }
 }
