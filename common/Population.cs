@@ -77,7 +77,7 @@ namespace common
             }
         }
 
-        private void DoCrossover(List<object> genes)
+        private void DoCrossover(List<BasketListGenome> genes)
         {
             //int originalCount = genes.Count;
 
@@ -110,11 +110,11 @@ namespace common
             {
                 if(g.CanReproduce(this.m_reproduceParam))
                 {
-                    this.m_genomes.Add(g);
+                    this.m_genomesNextGen.Add(g);
                 }
             }
 
-            DoCrossover();
+            DoCrossover(this.m_genomesNextGen);
 
             // Check for mutations
             foreach (Genome g in this.m_genomes)
