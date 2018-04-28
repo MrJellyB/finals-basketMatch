@@ -26,9 +26,9 @@ namespace common
 
         #endregion
 
-        #region Properties
+        #region Static Members
 
-
+        public static List<BasketListGenome> IdialBaskets;
 
         #endregion
 

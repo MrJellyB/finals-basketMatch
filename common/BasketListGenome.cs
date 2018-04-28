@@ -8,14 +8,14 @@ namespace common
     {
         #region Data Members
 
-        private float[] m_weights;
+        private double[] m_weights;
 
 
         #endregion
 
         #region Properties
 
-        public float[] Weights
+        public double[] Weights
         {
             get { return m_weights; }
             private set { m_weights = value; }
@@ -25,9 +25,9 @@ namespace common
 
         #region CTOR
 
-        public BasketListGenome(long length) : base(length, 0, 1)
+        public BasketListGenome(int length) : base(length, 0, 1)
         {
-            this.m_weights = new float[length];
+            this.m_weights = new double[length];
             // TODO: insert here default weights list
         }
 
@@ -37,7 +37,7 @@ namespace common
 
         public void SetWeights(float[] weights)
         {
-            this.m_weights = new float[weights.Length];
+            this.m_weights = new double[weights.Length];
 
             for (int i = 0; i < weights.Length; i++)
             {
@@ -55,14 +55,15 @@ namespace common
             this.m_weights[valNum] = weight; 
         }
 
-        public override float FitnessFunction()
+        public override double FitnessFunction()
         {
-            float productToReturn = 1f;
-
+            double productToReturn = 1f;
             for (int i = 0; i < this.Length; i++)
             {
-                productToReturn *= (this.m_weights[i] * (float)this.m_list[i]);
-            }
+                // TODO: Compare those genes against IdialBaskets in Population class
+                // to find the minimum
+                productToReturn *= (this.m_weights[i] * (double)this.m_list[i]);
+            } 
 
             return productToReturn;
         }

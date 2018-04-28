@@ -116,7 +116,7 @@ namespace common
             }
         }
 
-        public override float FitnessFunction()
+        public override double FitnessFunction()
         {
             // TODO: Add the fitness function here based on the basket weights
             return 1;

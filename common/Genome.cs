@@ -40,7 +40,7 @@ namespace common
         public abstract void Initiate();
         public abstract void Mutate();
         public abstract Genome Crossover(Genome g);
-        public abstract float FitnessFunction();
+        public abstract double FitnessFunction();
         public abstract bool CanDie(float fitness);
         public abstract bool CanReproduce(float fitness);     
 
