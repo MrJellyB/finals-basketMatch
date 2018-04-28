@@ -8,11 +8,11 @@ namespace common
 
         #region Data Members
 
-        private Random m_seed;
-        public Random Seed
+        private static Random s_seed;
+        public static Random Seed
         {
-            get { return m_seed;}
-            set { m_seed = value;}
+            get { return s_seed;}
+            set { s_seed = value;}
         }
         
         private int m_min;
@@ -70,7 +70,7 @@ namespace common
 
         private float GenerateRandGeneVal(int min, int max)
         {
-            return (float)(min + this.m_seed.NextDouble() * (max - min));
+            return (float)(min + s_seed.NextDouble() * (max - min));
         }
 
         #endregion
@@ -106,7 +106,7 @@ namespace common
 
             // Take the better gene that made out from the crossover, randomly
             // TODO: Maybe change this check to fitness check
-            if (this.m_seed.Next(2) == 1)
+            if (s_seed.Next(2) == 1)
             {
                 return firstGene;
             }
@@ -131,7 +131,7 @@ namespace common
         /// </summary>
         public override void Mutate()
         {
-            this.List[this.Seed.Next((int)this.Length)] = this.Seed.Next(this.Min, this.Max);
+            this.List[Seed.Next((int)this.Length)] = Seed.Next(this.Min, this.Max);
         }
         
         public override bool CanDie(float fitness)
