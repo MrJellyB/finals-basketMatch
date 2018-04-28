@@ -77,9 +77,53 @@ namespace common
             }
         }
 
+        private void DoCrossover(List<object> genes)
+        {
+            //int originalCount = genes.Count;
+
+            //// Take 50% of the genes and use
+        }
+
         #endregion
 
         #region Public Methods
+
+        public void NextGen()
+        {
+            this.m_currentGeneration++;
+
+            // Check which of the genomes we need to kill
+            foreach (BasketListGenome g in this.m_genomes)
+            {
+                if(g.CanDie(this.m_deathParam))
+                {
+                    this.m_genomes.Remove(g);
+                }
+            }
+
+            // Now reproduce
+            this.m_genomesNextGen.Clear();
+            this.m_genomesResults.Clear();
+
+            // Check which genomes need to be reproduced
+            foreach (BasketListGenome g in this.m_genomes)
+            {
+                if(g.CanReproduce(this.m_reproduceParam))
+                {
+                    this.m_genomes.Add(g);
+                }
+            }
+
+            DoCrossover();
+
+            // Check for mutations
+            foreach (Genome g in this.m_genomes)
+            {
+                Mutate(g);
+            }
+
+
+        }
 
         
 
