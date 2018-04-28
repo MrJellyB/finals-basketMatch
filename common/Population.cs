@@ -8,11 +8,14 @@ namespace common
     {
         #region Data Members
 
+        // Basic Params
         private int m_length;
         private int m_crossoverPoint;
         private int m_initialPopulationCount;
         private int m_populationLimit;
-
+        private float m_mutationFreq;
+        private float m_deathParam;
+        private float m_reproduceParam;
 
         #endregion
 
