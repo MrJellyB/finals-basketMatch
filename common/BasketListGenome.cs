@@ -25,7 +25,7 @@ namespace common
 
         #region CTOR
 
-        public BasketListGenome(long length) : base(length, 0, 100)
+        public BasketListGenome(long length) : base(length, 0, 1)
         {
             this.m_weights = new float[length];
             // TODO: insert here default weights list

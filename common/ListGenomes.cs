@@ -56,7 +56,7 @@ namespace common
             // Generate the gene list
             for (int i = 0; i < length; i++)
             {
-                int nextVal = GenerateRandGeneVal(min,max);
+                float nextVal = GenerateRandGeneVal(min,max);
                 this.m_list.Add(nextVal);
             }
         }
@@ -68,9 +68,9 @@ namespace common
             this.m_list = ((ListGenomes)g).List;
         }
 
-        private int GenerateRandGeneVal(int min, int max)
+        private float GenerateRandGeneVal(int min, int max)
         {
-            return this.m_seed.Next(min, max);
+            return (float)(min + this.m_seed.NextDouble() * (max - min));
         }
 
         #endregion

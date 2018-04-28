@@ -35,12 +35,6 @@ namespace common
         }
         #endregion
 
-        #region CTOR DTOR
-
-
-
-        #endregion
-
         #region Public Methods
 
         public abstract void Initiate();
