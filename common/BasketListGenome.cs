@@ -28,7 +28,13 @@ namespace common
         public BasketListGenome(int length) : base(length, 0, 1)
         {
             this.m_weights = new double[length];
-            // TODO: insert here default weights list
+            this.m_weights[0] = 1;
+
+            // Default weights
+            for (int i = 1; i < m_weights.Length; i++)
+            {
+                this.m_weights[i] = 0;
+            }
         }
 
         #endregion
