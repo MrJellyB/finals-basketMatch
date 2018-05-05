@@ -111,16 +111,22 @@ namespace common
                 }
             }
 
+            // Crossover couples
             while (NewGeneration.Count != originalCount)
             {
+                // Search first
                 foreach(BasketListGenome CurrElement1 in genes)
                 {
+                    // Check if we already have it.
                     if (!NewGeneration.Contains(CurrElement1))
                     {
+                        // Search second
                         foreach(BasketListGenome CurrElement2 in genes)
                         {
+                            // Check if we already have or if it is the same as the first.
                             if ((!NewGeneration.Contains(CurrElement2)) && (!CurrElement1.Equals(CurrElement2)))
                             {
+                                // Crossover in order to create new genome.
                                 BasketListGenome NewGenome = (BasketListGenome)CurrElement1.Crossover(CurrElement2);
                                 NewGeneration.Add(NewGenome);
                             }
