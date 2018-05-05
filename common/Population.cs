@@ -79,9 +79,55 @@ namespace common
 
         private void DoCrossover(List<BasketListGenome> genes) // OREN
         {
-            //int originalCount = genes.Count;
+            List<BasketListGenome> NewGeneration = new List<BasketListGenome>();
+            int originalCount = genes.Count;
+            int TotalScore = 0;
 
-            //// Take 50% of the genes and use
+            // Sum total scores
+            foreach(BasketListGenome CurrElement in genes)
+            {
+                TotalScore += (int)CurrElement.CurrentFitness;
+            }
+
+            // Take 50% of the genes and use
+            while (NewGeneration.Count != (originalCount/2))
+            {
+                Random r = new Random();
+                int rInt = r.Next(0, TotalScore + 1);
+                int SumScore = 0;
+
+                // Sum curr score
+                foreach(BasketListGenome CurrElement in genes)
+                {
+                    SumScore += (int)CurrElement.CurrentFitness;
+
+                    // Check if we can add it.
+                    if ((SumScore >= rInt) && (!NewGeneration.Contains(CurrElement)))
+                    {
+                        NewGeneration.Add(CurrElement);
+                    }
+
+                    break;
+                }
+            }
+
+            while (NewGeneration.Count != originalCount)
+            {
+                foreach(BasketListGenome CurrElement1 in genes)
+                {
+                    if (!NewGeneration.Contains(CurrElement1))
+                    {
+                        foreach(BasketListGenome CurrElement2 in genes)
+                        {
+                            if ((!NewGeneration.Contains(CurrElement2)) && (!CurrElement1.Equals(CurrElement2)))
+                            {
+                                BasketListGenome NewGenome = (BasketListGenome)CurrElement1.Crossover(CurrElement2);
+                                NewGeneration.Add(NewGenome);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         #endregion
