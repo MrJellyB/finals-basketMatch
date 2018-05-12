@@ -1,7 +1,7 @@
 ﻿using System;
 using Basket.Common.Data;
 
-namespace common
+namespace Basket.Match.BL
 {
     public class BasketListGenome : ListGenomes
     {
